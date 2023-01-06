@@ -101,7 +101,7 @@ class AlphabetLoader private constructor() : ModelLoader<Alphabet, Alphabet> {
     ): ModelLoader.LoadData<Alphabet>? {
         return ModelLoader.LoadData(
             ObjectKey(
-                blurHash.chars 
+                blurHash 
             ), BlurDataFetcher(blurHash)
         )
     }
