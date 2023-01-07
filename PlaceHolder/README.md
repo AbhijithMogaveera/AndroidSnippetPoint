@@ -99,30 +99,30 @@ class AlphabetDecoder(val context: Context): ResourceDecoder<Alphabet, Bitmap> {
 ```kotlin
 class AlphabetLoader private constructor() : ModelLoader<Alphabet, Alphabet> {
     override fun buildLoadData(
-        blurHash: Alphabet,
+        source: Alphabet,
         width: Int,
         height: Int,
         options: Options
     ): ModelLoader.LoadData<Alphabet>? {
         return ModelLoader.LoadData(
             ObjectKey(
-                blurHash 
-            ), BlurDataFetcher(blurHash)
+                source 
+            ), BlurDataFetcher(source)
         )
     }
 
-    override fun handles(blurHash: Alphabet): Boolean {
+    override fun handles(source: Alphabet): Boolean {
         return true
     }
 
-    private inner class BlurDataFetcher constructor(blurHash: Alphabet) :
+    private inner class BlurDataFetcher constructor(source: Alphabet) :
         DataFetcher<Alphabet> {
-        private val blurHash: Alphabet
+        private val source: Alphabet
         override fun loadData(
             priority: Priority,
             callback: DataFetcher.DataCallback<in Alphabet?>
         ) {
-            callback.onDataReady(blurHash)
+            callback.onDataReady(source)
         }
 
         override fun cleanup() {}
@@ -136,7 +136,7 @@ class AlphabetLoader private constructor() : ModelLoader<Alphabet, Alphabet> {
         }
 
         init {
-            this.blurHash = blurHash
+            this.source = source
         }
     }
 
