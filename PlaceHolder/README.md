@@ -62,7 +62,7 @@ dependencies {
 class MyApp: Application() {
     override fun onCreate() {
         super.onCreate()
-        GlideModule.setGlideComponentRegister(AppGlideComponentRegister())
+        MyAppGlideModule.setGlideComponentRegister(AppGlideComponentRegister())
     }
 }
 ```
@@ -97,6 +97,15 @@ class AlphabetDecoder(val context: Context): ResourceDecoder<Alphabet, Bitmap> {
 ```
 
 ```kotlin
+import com.bumptech.glide.Priority
+import com.bumptech.glide.load.DataSource
+import com.bumptech.glide.load.Options
+import com.bumptech.glide.load.data.DataFetcher
+import com.bumptech.glide.load.model.ModelLoader
+import com.bumptech.glide.load.model.ModelLoaderFactory
+import com.bumptech.glide.load.model.MultiModelLoaderFactory
+import com.bumptech.glide.signature.ObjectKey
+
 class AlphabetLoader private constructor() : ModelLoader<Alphabet, Alphabet> {
     override fun buildLoadData(
         source: Alphabet,
@@ -107,7 +116,7 @@ class AlphabetLoader private constructor() : ModelLoader<Alphabet, Alphabet> {
         return ModelLoader.LoadData(
             ObjectKey(
                 source 
-            ), BlurDataFetcher(source)
+            ), AlphabetDataFetcher(source)
         )
     }
 
@@ -115,7 +124,7 @@ class AlphabetLoader private constructor() : ModelLoader<Alphabet, Alphabet> {
         return true
     }
 
-    private inner class BlurDataFetcher constructor(source: Alphabet) :
+    private inner class AlphabetDataFetcher constructor(source: Alphabet) :
         DataFetcher<Alphabet> {
         private val source: Alphabet
         override fun loadData(
@@ -160,7 +169,7 @@ class AppGlideComponentRegister: RegisterGlideComponents {
 ```
 ```kotlin
 @GlideModule
-class GlideModule : AppGlideModule() {
+class MyAppGlideModule : AppGlideModule() {
 
     companion object {
         private lateinit var registerGlideComponents: RegisterGlideComponents
