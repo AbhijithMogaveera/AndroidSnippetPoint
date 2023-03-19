@@ -1,4 +1,6 @@
-# Is your app calling lots of API endpoints parallelly or server sending huge JSON response and your log cat is getting messy..? using following snippet you can only log that is nessary its an extension of HttpLoggingInterceptor
+## Is your app calling lots of API endpoints parallelly or server sending huge JSON response and your log cat is getting messy..? using following snippet you can only log only those that is necessary
+
+## its an extension of HttpLoggingInterceptor
 
 ![image](https://user-images.githubusercontent.com/46936065/226174421-532e86cd-9a9b-4f72-949d-3e77f82edb2a.png)
 
