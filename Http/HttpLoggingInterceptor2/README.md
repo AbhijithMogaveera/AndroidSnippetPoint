@@ -1,10 +1,10 @@
-# Is your app calling lots of API endpoints parallelly or server sending huge JSON response and your log cat is getting messy..? using following snippet you can only that is nessary 
+# Is your app calling lots of API endpoints parallelly or server sending huge JSON response and your log cat is getting messy..? using following snippet you can only log that is nessary its an extension of HttpLoggingInterceptor
 
 ![image](https://user-images.githubusercontent.com/46936065/226174421-532e86cd-9a9b-4f72-949d-3e77f82edb2a.png)
 
 ## Useage 
 
-```java
+```kotlin
     @GET("/api/my_profile_details")
     @LogThisRequest(logCatTag = "MyProfileDetails")
     suspend fun getMyProfileDetails(): ProfileDetails
@@ -13,7 +13,7 @@
 
 ## Copy this code into your project
 
-```java
+```kotlin
 
 import android.util.Log
 import okhttp3.*
@@ -340,7 +340,15 @@ fun Buffer.isProbablyUtf8(): Boolean {
 
 ## Add this intercepter at end while creating OkHttpClient  
 
-```java
+```kotlin
+    @Provides
+    @Singleton
+    fun providesBodyLogger(): HttpLoggingInterceptor2 {
+        val logging = HttpLoggingInterceptor2()
+        logging.level = HttpLoggingInterceptor2.Level.BODY
+        return logging
+    }
+
     @Provides
     @Singleton
     fun providesOkHttpClient(
