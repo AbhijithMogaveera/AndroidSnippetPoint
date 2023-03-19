@@ -11,7 +11,7 @@
 ```
 
 
-## Copy pastes this code to your project
+## Copy this code into your project
 
 ```java
 
