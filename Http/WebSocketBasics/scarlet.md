@@ -61,7 +61,7 @@ implementation("com.tinder.scarlet:websocket-okhttp:0.1.8")
 
 ```kotlin
  val client: OkHttpClient = OkHttpClient.Builder().apply {
-            providesBodyLogger()
+            
         }.build()
 Scarlet.Builder()
             .webSocketFactory(
