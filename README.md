@@ -1,4 +1,4 @@
-📌 Glide Custom With place holder 
+📌 Glide With Custom place holder 
 </br> code : https://github.com/AbhijithMogaveera/AndroidSnippetPoint/blob/main/Glide/PlaceHolder/README.md
 </br> post : https://www.linkedin.com/posts/abhijith-mogaveera-822308199_glide-point-activity-7017705194750717952-GGtW?utm_source=share&utm_medium=member_desktop
 </br>
