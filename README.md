@@ -4,7 +4,7 @@
 </br>
 </br>
 📌 HttpLoggingIntercepter2 
-Http logging intercepter with custom Logcat Tag</br>
+Http logging interceptor with custom Logcat Tag</br>
 code : https://github.com/AbhijithMogaveera/AndroidSnippetPoint/blob/main/Http/HttpLoggingInterceptor2/README.md</br>
 post : https://www.linkedin.com/posts/abhijith-mogaveera-822308199_android-kotlin-api-activity-7043198919870144512-SnGc?utm_source=share&utm_medium=member_desktop </br>
 
